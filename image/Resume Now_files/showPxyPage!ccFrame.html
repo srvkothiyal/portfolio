@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<!-- saved from url=(0117)https://cci.framehpci.com/iSynSApp/showPxyPage!ccFrame.action?pgmode1=prod&locationName=CheckoutJoshuaTree&sid=528063 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+ <!-- **head begin -->
+
+  
+
+  
+  
+  
+
+  
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+  
+<!-- **head end -->
+ 
+ <title>CC Map Frame V5 - false true</title>
+
+ <!-- **jq begin -->
+
+  
+  <script src="./jquery-2.2.4.min.js.download" type="text/javascript" charset="utf-8"></script>
+  <script src="./jquery.ba-postmessage.2.0.0.min.js.download" type="text/javascript" charset="utf-8"></script>
+
+
+
+<!-- **jq end -->
+
+ <!-- **jsglobal begin -->
+
+  <script>
+    var gbl_ccFieldNameInit = "ccNum";
+    var gbl_cvvFieldNameInit = "ccCVV";
+    var gbl_ccFieldNameAlt1 = "cardNumber";
+    var gbl_cvvFieldNameAlt1 = "cardCsc";
+    
+    var gbl_ccFieldName = gbl_ccFieldNameInit;
+    var gbl_cvvFieldName = gbl_cvvFieldNameInit;
+
+    var gbl_ccFieldValue = "";
+    var gbl_cvvFieldValue = "";
+    
+    var gbl_frameName = "";
+	var gbl_frameFocus = "";
+	var gbl_postMsgUrl = "";
+
+    var gbl_reportFormFields = "";
+    var gbl_reportFormValues = "";
+    var gbl_reportFormFormats = "";
+    var gbl_reportFormFieldArray = [];
+    var gbl_reportFormFieldValueMap = {};
+    var gbl_reportFormFieldClearedMap = {};
+    var gbl_reportFormFieldFormatMap = {};
+
+    var gbl_selected3DSecSessionId = "";
+    var gbl_selected3DSecName = "N";
+    var gbl_selected3DSecPayName = "";
+    var gbl_selected3DSecPayCCType = "";
+    var gbl_selected3DSecPayCurISO = "";
+
+        var gbl_tdsDelayed = false;
+    var gbl_tdsSetupStarted = false;
+    var gbl_tdsSetupComplete = false;
+
+    var gbl_tdsBINPending = false;
+    var gbl_tdsBINStarted = false;
+    var gbl_tdsBINComplete = false;
+    
+	        var gbl_cruiseSessionId = "";
+        var gbl_threeDSOrderId = "";
+        var gbl_threeDSJwtToken = "";
+        var gbl_cruiseBinPocessStatus = "";
+        var gbl_cruiseBinMinLength = 8;
+        
+        var gbl_ddcFormAction = "";
+        
+                var gbl_tfuGlobalWPFlex1Msg = "N";
+        var gbl_tfuGlobalPrelimResponse = ""; 
+        var gbl_tfuGlobalPostMsgUrl = "";
+                
+		
+		    var enableClientEnc = true;
+	    var gbl_encKeyName = "hpciwireT15KZ18U2N4X12K";
+	    var gbl_encKeyPublic = "MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEArkWd0P+dnpnso2ZPnB2FEmuJwUfgM2Xhz3wS1PDT6PrCepxRe72sMhwUF7f57QqEDWpmCRFBCIJo+21WC2Q1/e0wrnsrX05JyIqRp4s/ZMjyG/DKJ2AZVVe+OIWeoxMtg7Ge3EuY9N01HD8LwOnAUuMoqJSbZLGl7lW9dRVCh94hLnkkIsIy7MOvM/SUeAmaZFo6TOXU2bicFicJO9ceTtz4XCbhngE1RTZbE9rMlT/o9c02UXKOS0zU7bxaMZCQBXFeLWVP6CtOISDHlptc6oQ2Zbwz7AaSsVAeXEK8XMFfeZjYUx6CDzo8WdrRzt7IVHxDcCg0jn3LZZrYf8yyEqb4g8lKjA92u0lKrmVeN1ccfFvbWU2Z/d1O34pD81XkuUZCNujSWv49FsnFT9QgHLx5svlSL4nSX8x1ofdrAiob4hOM+2YjyWBujby5n2rPS0+HTneeyzmnd0RsL33xFkQEskTV/O/3HZyDc6R2En629m5DDfJa2VoqAg6Nj37ddPrDJ+Mj3K3qV/mX+x+dK/TmrB96YAwYOaiituQFC+48rQi1yze3Gpsg+g4wOSJVy+bzf1Z0CmpGfDf4VZxQ4f/hOt2JcSZAdsg4ay0S2o8lLKKabRHEuHS0goam+MWk0g+qgLIHSzzECw397KyD8ZK16EiwTev6a5LjcRce2e0CAwEAAQ==";
+	    var gbl_randomPrefix = "snUdwZuT";
+	    var gbl_randomSuffix = "emcbYMzK";
+	    	
+		var gbl_captchaIdValue = "783383";
+		var gbl_captchaRespValue = "1623048299-Gg0ar%2F29YnfUseILOWUqumC2faXJ524r5NufUJaI0zc%3D";
+		var gbl_captchaRespCFValue = "1683995604-jhpw3EV1uBxFxL++tr9qVTTS9aXMLqwld0Gz8hWR+jo=";
+		
+		var gbl_enterCCValue = "";
+		var gbl_enterCVVValue = "";
+		var gbl_enterCVVHidden = false;
+		var gbl_sentCCValue = "";
+		var gbl_sentCVVValue = "";
+		var gbl_tokenFullMsg = "";
+		var gbl_pendingPrelimPartMsg = "";	
+		
+	
+	hpciConsoleLogDebug = function(fullMessageStr){
+			}
+	hpciConsoleLogInfo = function(fullMessageStr){
+			}
+	hpciMsgSrcFrameName = function(srcFrameName) {
+		if (srcFrameName != "") {
+			return "&msgSrcFrame=" + encodeURIComponent(srcFrameName);
+		}
+		return "";
+	}
+    
+  </script>
+  <script src="./hpci-paramload-1.0.js.download" type="text/javascript" charset="utf-8"></script>
+
+<!-- **jsglobal end -->
+  
+ <!-- **jsfunction begin -->
+
+  <script>
+
+	hpciUrlParam = function(name, queryStr){
+		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(queryStr);
+		if (!results) { return 0; }
+		return decodeURIComponent(results[1]) || 0;
+	}
+
+	hpciUrlParamStr = function(name, queryStr){
+		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(queryStr);
+		if (!results) { return ""; }
+		return decodeURIComponent(results[1]) || "";
+	}
+
+	hpciCleanText = function(inTextValue){
+		var outCleanText = "";
+		if (inTextValue) {
+			for (var idx = 0; idx < inTextValue.length; idx++) {
+				if (inTextValue[idx] != '<' && inTextValue[idx] != '>' &&
+					inTextValue[idx] != '{' && inTextValue[idx] != '}' &&
+					inTextValue[idx] != '\'' && inTextValue[idx] != '"') {
+					outCleanText = outCleanText.concat(inTextValue[idx]);
+				}
+			}
+		}
+		return outCleanText;
+	}
+
+	hpciCleanCC = function(inCCNumValue){
+		var outCleanCC = "";
+		if (inCCNumValue) {
+			for (var idx = 0; idx < inCCNumValue.length; idx++) {
+				if (inCCNumValue[idx] >= '0' && inCCNumValue[idx] <= '9') {
+					outCleanCC = outCleanCC.concat(inCCNumValue[idx]);
+				}
+			}
+		}
+		return outCleanCC;
+	}
+
+	hpciCheckInvalidCC = function(inCleanCC){
+		var outInvalidCC = "N";
+		if (inCleanCC) {
+			for (var idx = 0; idx < inCleanCC.length; idx++) {
+				if (inCleanCC[idx] >= '0' && inCleanCC[idx] <= '9') {
+					// numbers are ok
+				}
+				else if (inCleanCC[idx] != ' ' && inCleanCC[idx] != '-') {
+					outInvalidCC = "Y"
+				}
+			}
+		}
+		return outInvalidCC;
+	}
+
+	hpciPrepareCCLength = function(inCleanCC, inInvalidCC){
+		var outCCLength = 0;
+		if (inCleanCC && inInvalidCC && inInvalidCC != "Y") {
+			outCCLength = inCleanCC.length;
+		}
+		return outCCLength;
+	}
+	
+	hpciPrepareEnteredCCLength = function(inCCNumValue){
+		var outCCEnterLength = 0;
+		if (inCCNumValue) {
+			outCCEnterLength = inCCNumValue.length;
+		}
+		return outCCEnterLength;
+	}
+
+	hpciPrepareUpdatedCursorPosition = function(inFormattedCC, delimiter, curPosition){
+	
+		var outCurPosition = curPosition;
+		// update the position of the cursor in the cc field after delimiter once formatting is complete
+		var prevVal = inFormattedCC.charAt(curPosition - 1);
+		var fulValLen = inFormattedCC.length;
+
+		if((inFormattedCC.indexOf(delimiter) != -1) && (prevVal == delimiter) && (curPosition == (fulValLen-1))){
+			outCurPosition = outCurPosition + 1;
+		}
+		
+		return outCurPosition;
+	}
+	
+	hpciFormatCCDigits = function(inCleanCC, inCCType, delimiter) {
+		var outFormatCCDigits = "";
+		if (inCleanCC && inCCType && delimiter != null) {
+			if (inCCType == "amex") {
+				for(var i=0; i < inCleanCC.length; i++) {
+			        if((i == 4 || i == 10) || (i > 14 && i%4 == 3)) {
+			        	outFormatCCDigits = outFormatCCDigits.concat(delimiter);
+			        }
+			        outFormatCCDigits = outFormatCCDigits.concat(inCleanCC[i]);
+		    	}
+			}
+			else {
+				for(var i=0; i < inCleanCC.length; i++) {
+			        if(i > 3 && i%4 == 0) {
+			        	outFormatCCDigits = outFormatCCDigits.concat(delimiter);
+			        }
+			        outFormatCCDigits = outFormatCCDigits.concat(inCleanCC[i]);
+				}
+			}
+		}
+		return outFormatCCDigits;
+	}
+
+	hpciIsNumChar = function(inCharValue){
+		var outNumFound = false;
+		if (inCharValue >= '0' && inCharValue <= '9') {
+			outNumFound = true;
+		}
+		return outNumFound;
+	}
+
+	hpciMaskCCDigits = function() {
+			}
+
+	hpciUnmaskCCDigits = function() {
+			}
+
+	hpciGetCCDigits = function(inCCNumObj) {
+		var outCCNumValue = "";
+					outCCNumValue = inCCNumObj.val();
+				return outCCNumValue;
+	}
+
+	hpciMaskCVVDigits = function() {
+			}
+
+	hpciUnmaskCVVDigits = function() {
+			}
+
+	hpciGetCVVDigits = function(inCCCVVObj) {
+		var outCCCVVValue = "";
+					outCCCVVValue = inCCCVVObj.val();
+				return outCCCVVValue;
+	}
+		
+	hpciPrepareCCType = function(inCleanCC, inInvalidCC, inCCLength) {
+		var outCCType = "na";
+		if (inCleanCC && inInvalidCC && inInvalidCC != "Y" && inCleanCC.length >= 4) {
+			var ccChar1 = inCleanCC.substring(0, 1);
+			var ccChar2 = inCleanCC.substring(0, 2);
+			var ccChar3 = inCleanCC.substring(0, 3);
+			var ccChar4 = inCleanCC.substring(0, 4);
+			
+									
+			if (outCCType == "na") {
+				if (ccChar1 == "4") {
+					outCCType = "visa";
+				}
+				else if (ccChar2 == "51" || ccChar2 == "52" || ccChar2 == "53" || ccChar2 == "54" || ccChar2 == "55") {
+					outCCType = "mastercard";
+				}
+				else if (ccChar3 == "222" || ccChar3 == "223" || ccChar3 == "224" || ccChar3 == "225" || ccChar3 == "226" || ccChar3 == "227" || ccChar3 == "228" || ccChar3 == "229" || ccChar2 == "23" || ccChar2 == "24" || ccChar2 == "25" || ccChar2 == "26" || ccChar3 == "270" || ccChar3 == "271" || ccChar4 == "2720") {
+					outCCType = "mastercard";
+				}			
+				else if (ccChar4 == "6011" || ccChar3 == "622" || ccChar3 == "644" || ccChar3 == "645" || ccChar3 == "646" || ccChar3 == "647" || ccChar3 == "648" || ccChar3 == "649" || ccChar2 == "65") {
+					outCCType = "discover";
+				}
+				else if (ccChar4 == "3528" || ccChar4 == "3529" || ccChar3 == "353" || ccChar3 == "354" || ccChar3 == "355" || ccChar3 == "356" || ccChar3 == "357" || ccChar3 == "358") {
+					outCCType = "jcb";
+				}
+				else if (ccChar2 == "34" || ccChar2 == "37") {
+					outCCType = "amex";
+				}
+				else if (ccChar4 == "3095" || ccChar3 == "300" || ccChar3 == "301" || ccChar3 == "302" || ccChar3 == "303" || ccChar3 == "304" || ccChar3 == "305" || ccChar2 == "38" || ccChar2 == "39" || ccChar2 == "36") {
+					outCCType = "diners";
+				}
+				else if (ccChar2 == "62" || ccChar2 == "81") {
+					outCCType = "unionpay";
+				}
+				else {
+					outCCType = "unknown";
+				}
+			}
+					}
+		
+		if (inCCLength && inCCLength == 0) {
+			outCCType = "na";
+		}
+
+		return outCCType;
+	}
+
+	hpciPrepareCCTypeForCC = function(ccNumObjValue) {
+		// clean CC number
+		var cleanCC = hpciCleanCC(ccNumObjValue);
+		var invalidCC = hpciCheckInvalidCC(cleanCC);
+		var ccLength = hpciPrepareCCLength(cleanCC, invalidCC);
+		
+		// determine type
+		return hpciPrepareCCType(cleanCC, invalidCC, ccLength);
+	}
+	
+	hpciPrepareCCBIN = function(inCleanCC, inInvalidCC) {
+		var outCCBIN = "";
+		if (inCleanCC && inInvalidCC && inInvalidCC != "Y" && inCleanCC.length >= 6) {
+			outCCBIN = inCleanCC.substring(0, 6);
+		}
+		return outCCBIN;
+	}
+	
+	hpciCheckCCValid = function(inCleanCC, inInvalidCC) {
+		var outCCValid = "N";
+		if (inCleanCC && inInvalidCC && inInvalidCC != "Y" && inCleanCC.length >= 12 && inCleanCC.length <= 19) {
+			var sum = 0;
+	
+			var alternate = false;
+			for (var i = inCleanCC.length - 1; i >= 0; i--) {
+				var curNum = parseInt(inCleanCC[i]);
+				if (alternate) {
+					curNum = curNum * 2;
+					if (curNum > 9) {
+						curNum = (curNum % 10) + 1;
+					}
+				}
+				sum += curNum;
+				alternate = !alternate;
+			}
+			
+			// check mod
+			var modCheck = sum % 10;
+			if (modCheck == 0) {
+				outCCValid = "Y";
+			}
+		}
+		return outCCValid;
+	}
+
+	hpciCleanCVV = function(inCVVNumValue){
+		var outCleanCVV = "";
+		if (inCVVNumValue) {
+			for (var idx = 0; idx < inCVVNumValue.length; idx++) {
+				if (inCVVNumValue[idx] >= '0' && inCVVNumValue[idx] <= '9') {
+					outCleanCVV = outCleanCVV.concat(inCVVNumValue[idx]);
+				}
+			}
+		}
+		return outCleanCVV;
+	}
+
+	hpciCheckInvalidCVV = function(inCVVNumValue){
+		var outInvalidCVV = "N";
+		if (inCVVNumValue) {
+			for (var idx = 0; idx < inCVVNumValue.length; idx++) {
+				if (inCVVNumValue[idx] >= '0' && inCVVNumValue[idx] <= '9') {
+					// numbers are ok
+				}
+				else if (inCVVNumValue[idx] != ' ') {
+					outInvalidCVV = "Y"
+				}
+			}
+		}
+		return outInvalidCVV;
+	}
+	
+	hpciPrepareCVVLength = function(inCleanCVV, inInvalidCVV){
+		var outCVVLength = 0;
+		if (inCleanCVV && inInvalidCVV && inInvalidCVV != "Y") {
+			outCVVLength = inCleanCVV.length;
+		}
+		return outCVVLength;
+	}
+	
+	hpciCheckCVVValid = function(inInvalidCVV, inCVVLength, inCCType){
+		var outCVVValid = "N";
+		if (inInvalidCVV && inCVVLength && inCCType != null && inInvalidCVV != "Y" && inCVVLength > 0 && inCVVLength <= 4) {
+			if (inCCType == "amex") {
+				if (inCVVLength == 4) {
+					outCVVValid = "Y";
+				}
+			}
+			else if ((inCCType == "na" || inCCType == "unknown" || inCCType == "") && inCVVLength >= 3 && inCVVLength <= 4) {
+				outCVVValid = "Y";
+			}
+			else if (inCVVLength == 3) {
+				outCVVValid = "Y";
+			}
+		}
+		return outCVVValid;
+	}
+
+	hpciIsCCValue = function(inValue){
+		var cleanValue = hpciCleanCC(inValue);
+		var outCCValid = hpciCheckCCValid(cleanValue, "");
+		return outCCValid;
+	}
+
+	hpciAllowNum = function(inFormValue){
+		var outCleanFormValue = "";
+		if (inFormValue) {
+			for (var idx = 0; idx < inFormValue.length; idx++) {
+				if (inFormValue[idx] >= '0' && inFormValue[idx] <= '9') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+			}
+		}
+		return outCleanFormValue;
+	}
+
+	hpciAllowAlpha = function(inFormValue){
+		var outCleanFormValue = "";
+		if (inFormValue) {
+			for (var idx = 0; idx < inFormValue.length; idx++) {
+				if (inFormValue[idx] >= 'a' && inFormValue[idx] <= 'z') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+				else if (inFormValue[idx] >= 'A' && inFormValue[idx] <= 'Z') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+				else if (inFormValue[idx] == ' ') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+			}
+		}
+		return outCleanFormValue;
+	}
+
+	hpciAllowAlphaNum = function(inFormValue){
+		var outCleanFormValue = "";
+		if (inFormValue) {
+			for (var idx = 0; idx < inFormValue.length; idx++) {
+				if (inFormValue[idx] >= '0' && inFormValue[idx] <= '9') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+				else if (inFormValue[idx] >= 'a' && inFormValue[idx] <= 'z') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+				else if (inFormValue[idx] >= 'A' && inFormValue[idx] <= 'Z') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+				else if (inFormValue[idx] == ' ') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+			}
+		}
+		return outCleanFormValue;
+	}
+
+	hpciAllowExpDate = function(inFormValue){
+		var outCleanFormValue = "";
+		if (inFormValue) {
+			for (var idx = 0; idx < inFormValue.length; idx++) {
+				if (inFormValue[idx] >= '0' && inFormValue[idx] <= '9') {
+					outCleanFormValue = outCleanFormValue.concat(inFormValue[idx]);
+				}
+			}
+		}
+		if (outCleanFormValue.length >= 2) {
+			var mmFormValue = outCleanFormValue.substring(0, 2);
+			var yyFormValue = outCleanFormValue.substring(2);
+			outCleanFormValue = mmFormValue + "/" + yyFormValue;
+		}
+		
+		return outCleanFormValue;
+	}
+
+	hpciFormatReportField = function(fieldName, fieldValue) {
+		var outFormatFieldValue = fieldValue;
+		if (fieldName && fieldValue) {
+			var formatName = gbl_reportFormFieldFormatMap[fieldName];
+			if(formatName != null) {
+				if (formatName == "num") {
+					outFormatFieldValue = hpciAllowNum(fieldValue);
+				}
+				else if (formatName == "alpha") {
+					outFormatFieldValue = hpciAllowAlpha(fieldValue);
+				}
+				else if (formatName == "alphanum") {
+					outFormatFieldValue = hpciAllowAlphaNum(fieldValue);
+				}
+				else if (formatName == "expdt") {
+					outFormatFieldValue = hpciAllowExpDate(fieldValue);
+				}
+			}
+		}
+		return outFormatFieldValue;
+	}
+
+	hpci3DSSelectReady = function() {
+		var ready3DSSelect = false;
+
+		if (gbl_selected3DSecName && (gbl_selected3DSecName == "cruise1" || gbl_selected3DSecName == "wpflex1") && gbl_selected3DSecPayName && gbl_selected3DSecPayCurISO) {
+			ready3DSSelect = true;
+		}
+		
+		return ready3DSSelect;
+	}
+
+  </script>
+
+<!-- **jsfunction end -->
+  
+ <!-- **srvcomm begin -->
+  
+    	  <script type="text/javascript" src="./jsencrypt.min.js.download"></script>
+	  <script src="./hpci-tlschk-1.0.js.download" type="text/javascript" charset="utf-8"></script>
+	  <script>
+		hpciConsoleLogDebug("TLS 1.2 not supported:" + enableClientEnc);
+	    var encryptService = new JSEncrypt();
+		if (enableClientEnc && gbl_encKeyPublic != "") {
+		  hpciConsoleLogDebug("Going to set public key");
+	      encryptService.setPublicKey(gbl_encKeyPublic);
+		}
+	  </script>
+	  
+	  <script>
+	
+		hpciSetEnteredCCValue = function(inCCValue){
+			if (inCCValue && inCCValue != "") {
+				gbl_enterCCValue = inCCValue;
+			}
+		}
+
+		hpciGetEnteredCCValue = function(){
+			return gbl_enterCCValue;
+		}
+
+		hpciSetEnteredCVVValue = function(inCVVValue){
+			if (inCVVValue && inCVVValue != "") {
+				gbl_enterCVVValue = inCVVValue;
+			}
+		}
+
+		hpciGetEnteredCVVValue = function(){
+			return gbl_enterCVVValue;
+		}
+
+		hpciSetEnteredCVVHidden = function(inCVVHidden){
+			if (!gbl_enterCVVHidden) {
+				gbl_enterCVVHidden = inCVVHidden;
+			}
+		}
+
+		hpciGetEnteredCVVHidden = function() {
+			return gbl_enterCVVHidden;
+		}
+	
+		hpciMakeCCToken = function(updateTokenValues, ccNumObjValue, ccCVVObjValue, ccCVVHidden){
+							return false;
+					}
+
+		hpci3DSBINProcess = function(fullPrelimResponse){
+
+			var ccNumObj = jQuery("#" + gbl_ccFieldName);
+			var ccNumObjValue = hpciGetCCDigits(ccNumObj);
+					
+		 	var cleanCC = hpciCleanCC(ccNumObjValue);
+			var invalidCC = hpciCheckInvalidCC(cleanCC);
+			var ccLength = hpciPrepareCCLength(cleanCC, invalidCC);
+			
+		  	if(	ccLength < gbl_cruiseBinMinLength ) {
+				// Cc number length is less then 8 digits
+				if (fullPrelimResponse != "") {
+					fullPrelimResponse = fullPrelimResponse + hpciReportFormFields();
+							    	
+					hpciConsoleLogDebug("sending fresh message 1.1:" + fullPrelimResponse);
+				  	// reset the global pending message by returning a blank pending 
+					jQuery.postMessage(
+					  fullPrelimResponse,
+					  gbl_postMsgUrl,
+					  parent
+					);
+				}
+				return;
+		  	}
+			
+			hpciConsoleLogDebug("hpci3DSBINProcess proceed check gbl_tdsBINStarted:" + gbl_tdsBINStarted + "; fullPrelimResponse:" + fullPrelimResponse + "; gbl_tokenFullMsg:" + gbl_tokenFullMsg);
+			if (gbl_tdsBINStarted || (fullPrelimResponse == "" && gbl_tokenFullMsg == "")) {
+				gbl_tdsBINPending = true;
+				return;
+			}
+			
+			hpciConsoleLogDebug("hpci3DSBINProcess started");
+			gbl_tdsBINStarted = true;
+			gbl_tdsBINPending = false;
+		  	
+		  	if (gbl_selected3DSecName == "cruise1") {
+		  		Cardinal.trigger("bin.process", cleanCC)
+				  .then(function(results){
+					    if(results.Status) {
+					    	hpciConsoleLogDebug("bin.process complete");
+					    	var cruiseBinStatus = results.Status;
+					    	//Set a global flag for Bin.Process
+					    	gbl_tdsBINComplete = true;
+					    	gbl_cruiseBinPocessStatus = cruiseBinStatus;
+					    	hpciConsoleLogDebug("bin.process complete, results:" + gbl_cruiseBinPocessStatus);
+					    	hpciConsoleLogDebug("SessionId: " + gbl_cruiseSessionId);
+					    							    	
+					    	cruiseData = "&cruiseSessionId=" + encodeURIComponent(gbl_cruiseSessionId) + "&cruiseBinStatus=" + encodeURIComponent(cruiseBinStatus) + "&threeDSOrderId=" + encodeURIComponent(gbl_threeDSOrderId);
+					    	
+					  	    					    	gbl_tokenFullMsg = gbl_tokenFullMsg + cruiseData;
+						    
+						    if (fullPrelimResponse != "") {
+						    	fullPrelimResponse = fullPrelimResponse + cruiseData;
+						    }
+						    else {
+						    	fullPrelimResponse = gbl_tokenFullMsg;
+						    }
+						    
+					    	fullPrelimResponse = fullPrelimResponse + hpciReportFormFields();
+					    	
+					    	// reset the global pending message by returning a blank value
+					    	hpciConsoleLogDebug("sending fresh message 1.0:" + fullPrelimResponse);
+							jQuery.postMessage(
+							  fullPrelimResponse,
+							  gbl_postMsgUrl,
+							  parent
+							);	  
+					    }
+				    })
+				  .catch(function(error){
+				    hpciConsoleLogDebug("could not complete Cardinal Cruise bin.process error 1:" + error);
+				  })
+			}
+			else if (gbl_selected3DSecName == "wpflex1") {
+				
+								var flexIframe = document.getElementById('hpciDDCFrame');
+				var flexIframeDoc = flexIframe.contentDocument || flexIframe.contentWindow.document;
+				flexIframeDoc.getElementById("flexDDCJWT").value = gbl_threeDSJwtToken;
+				flexIframeDoc.getElementById("flexDDCBin").value = cleanCC;
+				flexIframeDoc.getElementById("flexDDCForm").action = gbl_ddcFormAction;
+				gbl_tfuGlobalWPFlex1Msg = "Y";
+				flexIframeDoc.getElementById("flexDDCForm").submit();
+				
+								gbl_tfuGlobalPrelimResponse = fullPrelimResponse;
+				gbl_tfuGlobalPostMsgUrl = gbl_postMsgUrl;
+				gbl_tdsBINComplete = true;
+			}
+
+		}
+
+		hpci3DSTokenizationFollowUp = function(fullPrelimResponse){
+		
+			if (gbl_tdsSetupComplete) {
+								hpciConsoleLogDebug("hpci3DSTokenizationFollowUp:" + fullPrelimResponse);
+				hpci3DSBINProcess(fullPrelimResponse);
+			}
+			else if (gbl_tdsSetupStarted) {
+								gbl_tdsBINPending = true;
+			}
+			else if (gbl_tokenFullMsg && gbl_tokenFullMsg != "") {
+								hpciConsoleLogDebug("trigbin - hpciStart3DSWiring:" + fullPrelimResponse);
+				gbl_tdsBINPending = true;
+				hpciStart3DSWiring(fullPrelimResponse);
+			}
+			
+		}
+
+		hpciTokenizationFollowUp = function(srcFrameName, tfuCreateMapCCRespMsg, tfuPendingPrelimPartMsg){
+		
+						hpciStatus = hpciUrlParam('hpciStatus', "?" + tfuCreateMapCCRespMsg);
+			gbl_captchaIdValue = hpciUrlParam('nextCaptchaId', "?" + tfuCreateMapCCRespMsg);
+			gbl_captchaRespValue = hpciUrlParam('nextCaptchaResp', "?" + tfuCreateMapCCRespMsg);
+		  
+		  	var fullPrelimResponse = "";
+		    if (tfuPendingPrelimPartMsg != "") {
+		    	fullPrelimResponse = fullPrelimResponse + tfuPendingPrelimPartMsg + "&";
+			  	tfuPendingPrelimPartMsg = "";
+		    }
+		  	fullPrelimResponse = fullPrelimResponse + tfuCreateMapCCRespMsg;
+	
+	  	    			gbl_tokenFullMsg = tfuCreateMapCCRespMsg;
+			
+			if (gbl_selected3DSecName == "cruise1" || gbl_selected3DSecName == "wpflex1") {
+				hpci3DSTokenizationFollowUp(fullPrelimResponse);
+		  	}
+		  	else {
+		  	
+		  				  		fullPrelimResponse = fullPrelimResponse + hpciReportFormFields() + hpciMsgSrcFrameName(srcFrameName);
+		  	
+				hpciConsoleLogDebug("sending fresh message 1.2:" + fullPrelimResponse);
+			  	
+			  	// reset the pending message
+				jQuery.postMessage(
+				  fullPrelimResponse,
+				  gbl_postMsgUrl,
+				  parent
+				);	     
+	
+			}
+	
+			return tfuPendingPrelimPartMsg;
+		}
+		
+		hpciTokenizePANAndSendPrelimMsg = function(srcFrameName, prelimFullMsg, prelimPartMsg, ccNumObjValue, ccCVVObjValue, ccCVVHidden) {
+		
+			if (gbl_pendingPrelimPartMsg != "") {
+				// still waiting for a token
+				return;
+			}
+			
+			// check marker if token needs to be created
+			var readyToTokenize = hpciMakeCCToken(true, ccNumObjValue, ccCVVObjValue, ccCVVHidden);
+			hpciConsoleLogDebug("in hpciTokenizePANAndSendPrelimMsg gbl_tokenFullMsg:" + gbl_tokenFullMsg + ";");
+		
+			// check if we already have a prepared response
+			if (readyToTokenize && gbl_tokenFullMsg == "") {
+				// set the pending message so that other tokenization attempts are stopped
+				gbl_pendingPrelimPartMsg = prelimPartMsg;
+				
+				// encrypt if required
+				var enteredCCNumValue = hpciGetEnteredCCValue();
+				var enteredCVVNumValue = hpciGetEnteredCVVValue();
+				var encryptKeyName = "";
+				var encryptEnabled = "N";
+				if (enableClientEnc) {
+					var paddedCCNum = gbl_randomPrefix + "-" + enteredCCNumValue + "-" + gbl_randomSuffix;
+					var encryptedCC = encryptService.encrypt(paddedCCNum);
+					enteredCCNumValue = encryptedCC;
+					encryptKeyName = gbl_encKeyName;
+					encryptEnabled = "Y";
+					hpciConsoleLogDebug("encrypted cc:" + encryptedCC);
+				}
+				
+				hpciConsoleLogDebug("creating fresh token 1");
+				var actionUrl = "https://cci.framehpci.com/iSynSApp/appUserMapCC!createMapedCC.action?sid=528063&captchaId=" + encodeURIComponent(gbl_captchaIdValue) + "&captchaResp=" + encodeURIComponent(gbl_captchaRespCFValue);
+				jQuery.post(actionUrl, { ccNum: enteredCCNumValue, ccCVV: enteredCVVNumValue, cvvValidate: "", enableTokenDisplay: "", ccNumTokenIdx: "1", ccNumToken: "", ccCVVToken: "", firstName: "", lastName: "", expYear: "", expMonth: "", requestRef: "", encryptEnabled: encryptEnabled, encryptKeyName: encryptKeyName },
+				  function(data){
+					// clean CC number
+					var cleanCC = hpciCleanCC(ccNumObjValue);
+					var invalidCC = hpciCheckInvalidCC(cleanCC);
+					var ccLength = hpciPrepareCCLength(cleanCC, invalidCC);
+					
+					// determine type
+					var ccTypeLocal = hpciPrepareCCType(cleanCC, invalidCC, ccLength);
+					data = data + "&hpciCCType=" + encodeURIComponent(ccTypeLocal);
+				
+			  		// reset the global value
+			  		gbl_pendingPrelimPartMsg = hpciTokenizationFollowUp(srcFrameName, data, gbl_pendingPrelimPartMsg);
+				  }
+				)
+			    			    .fail(function() {
+				  	// setup error response
+				  	var failData = "hpciStatus=error&hpciErrCode=AMC_ACT_2&hpciErrMsg=Request+failed";
+				  	
+									  	
+			  		gbl_pendingPrelimPartMsg = hpciTokenizationFollowUp(srcFrameName, failData, gbl_pendingPrelimPartMsg);
+				  }
+				)
+								;
+			}
+			else {
+				// found a message to send
+				var fullCachedResponse = "";
+				if (gbl_tokenFullMsg == "") {
+					fullCachedResponse = prelimFullMsg;
+				}
+				else {
+					fullCachedResponse = prelimPartMsg + "&" + gbl_tokenFullMsg;
+				}
+	
+			  	// fetch selected parameters
+			  	fullCachedResponse = fullCachedResponse + hpciReportFormFields();
+			  	
+			  	// add frame source
+				fullCachedResponse = fullCachedResponse + hpciMsgSrcFrameName(srcFrameName);
+	
+				hpciConsoleLogDebug("sending cached message 1 fullCachedResponse:" + fullCachedResponse);
+				
+				jQuery.postMessage(
+				  fullCachedResponse,
+				  gbl_postMsgUrl,
+				  parent
+				);	     			
+			}
+		}
+	    
+	    hpciTokenizePANAndSendFullMsg = function(srcFrameName, ccNumObjValue, ccCVVObjValue, postRcvdParamData) {
+	    
+	  	 	// check if the tokenization was already completed by the prelim hook
+	  	 	if (gbl_tokenFullMsg == "") {
+
+				// set values
+				var cleanCC = hpciCleanCC(ccNumObjValue);
+				var cleanCVV = hpciCleanCVV(ccCVVObjValue);
+				hpciSetEnteredCCValue(cleanCC);
+				hpciSetEnteredCVVValue(cleanCVV);
+							     
+			    // load the param data
+			    var expMonth = hpciUrlParamStr('expMonth', "?" + postRcvdParamData);
+			    var expYear = hpciUrlParamStr('expYear', "?" + postRcvdParamData);
+			    var firstName = hpciUrlParamStr('firstName', "?" + postRcvdParamData);
+			    var lastName = hpciUrlParamStr('lastName', "?" + postRcvdParamData);
+			    var requestRef = hpciUrlParamStr('requestRef', "?" + postRcvdParamData);
+			    
+			    // encrypt if required
+				var enteredCCNumValue = hpciGetEnteredCCValue();
+				var enteredCVVNumValue = hpciGetEnteredCVVValue();
+				var encryptKeyName = "";
+				var encryptEnabled = "N";
+			    if (enableClientEnc) {
+			      var paddedCCNum = gbl_randomPrefix + "-" + enteredCCNumValue + "-" + gbl_randomSuffix;
+			      var encryptedCC = encryptService.encrypt(paddedCCNum);
+			      enteredCCNumValue = encryptedCC;
+			      encryptKeyName = gbl_encKeyName;
+			      encryptEnabled = "Y";
+			      hpciConsoleLogDebug("encrypted cc:" + encryptedCC);
+			    }
+			    
+			    			     
+			    hpciConsoleLogDebug("creating fresh token 2");
+				var actionUrl = "https://cci.framehpci.com/iSynSApp/appUserMapCC!createMapedCC.action?sid=528063&captchaId=" + encodeURIComponent(gbl_captchaIdValue) + "&captchaResp=" + encodeURIComponent(gbl_captchaRespCFValue);
+			    jQuery.post(actionUrl, { ccNum: enteredCCNumValue, ccCVV: enteredCVVNumValue, cvvValidate: "", enableTokenDisplay: "", ccNumTokenIdx: "1", ccNumToken: "", ccCVVToken: "", firstName: firstName, lastName: lastName, expYear: expYear, expMonth: expMonth, requestRef: requestRef, encryptEnabled: encryptEnabled, encryptKeyName: encryptKeyName },
+			      function(data){
+					// clean CC number
+					var invalidCC = hpciCheckInvalidCC(cleanCC);
+					var ccLength = hpciPrepareCCLength(cleanCC, invalidCC);
+					
+					// determine type
+					var ccTypeLocal = hpciPrepareCCType(cleanCC, invalidCC, ccLength);
+					data = data + "&hpciCCType=" + encodeURIComponent(ccTypeLocal);
+					
+			        var noPendingData = "";
+			        noPendingData = hpciTokenizationFollowUp(srcFrameName, data, noPendingData);
+			       }
+			    )
+			    			    .fail(function() {
+				  	// setup error response
+				  	var failData = "hpciStatus=error&hpciErrCode=AMC_ACT_2&hpciErrMsg=Request+failed";
+				  	
+										
+			        var noPendingData = "";
+			        noPendingData = hpciTokenizationFollowUp(srcFrameName, failData, noPendingData);
+				  }
+				)
+								;
+			}
+			else {
+				// found a cached message to send
+				var fullCachedResponse = gbl_tokenFullMsg;
+				
+			  	// fetch selected parameters
+			  	fullCachedResponse = fullCachedResponse + hpciReportFormFields();
+
+			    // add frame source
+				fullCachedResponse = fullCachedResponse + hpciMsgSrcFrameName(srcFrameName);
+				
+				hpciConsoleLogDebug("sending cached message 2 fullCachedResponse:" + fullCachedResponse);
+				jQuery.postMessage(
+				  fullCachedResponse,
+				  gbl_postMsgUrl,
+				  parent
+				);	     			
+			}
+	    
+	    }
+	    
+		hpciSendCCNumMsg = function (srcFrameName, ccNumObjValue, ccCVVObjValue, ccCVVHidden) {
+	    	
+				
+		}
+	    
+		hpciSendCVVMsg = function (srcFrameName, ccNumObjValue, ccCVVObjValue, ccCVVHidden) {
+			
+	    				
+		}
+
+		hpciTokenizeGPayToken = function(srcFrameName, fullGPayToken) {
+		
+			if (enableClientEnc) {
+				// this should not happen, GPay only supported in modern browsers
+				return;
+			}
+			
+			// create a hpci token
+			hpciConsoleLogDebug("creating hpci token for gpay 1");
+			jQuery.post("https://cci.framehpci.com/iSynSApp/appUserMapCC!createMapedGPay.action", { captchaId: gbl_captchaIdValue, captchaResp: gbl_captchaRespValue, gpayTokenEncoded: fullGPayToken, sid: "528063" },
+			  function(data){
+
+		       hpciStatus = hpciUrlParam('hpciStatus', "?" + data);
+		       gbl_captchaIdValue = hpciUrlParam('nextCaptchaId', "?" + data);
+		       gbl_captchaRespValue = hpciUrlParam('nextCaptchaResp', "?" + data);
+
+			   // fetch selected parameters
+			   var fullData = data + hpciReportFormFields();
+
+			   // add response mode
+			   fullData = fullData + "&hpciRespMode=gpaytoken";
+
+			   // add frame source
+			   fullData = fullData + hpciMsgSrcFrameName(srcFrameName);
+
+		       hpciConsoleLogDebug("sending gpay-hpc token:" + fullData);
+		        
+			   jQuery.postMessage(
+				  fullData,
+				  gbl_postMsgUrl,
+				  parent
+				);	     
+	
+			  }
+			);
+		}
+
+		hpciCruise1Init = function(fullPrelimResponse) {
+		
+			hpciConsoleLogDebug("In hpciCruise1Init");
+			
+			Cardinal.configure({
+				logging: {
+											level: "off"
+									}
+			});
+			
+			Cardinal.setup("init", {
+				jwt: gbl_threeDSJwtToken
+			});
+					
+			Cardinal.on("payments.setupComplete", function(setupCompleteData) {
+				// For example, you may have your Submit button disabled on page load. Once you are setup
+				// for CCA, you may then enable it. This will prevent users from submitting their order
+				// before CCA is ready.
+			    hpciConsoleLogDebug("======Begin payments.setupComplete callback=========");
+			    gbl_cruiseSessionId = setupCompleteData.sessionId;
+			    
+			    hpciConsoleLogDebug("SetupCompleteData(sessionId): " + gbl_cruiseSessionId);
+				gbl_tdsSetupComplete = true;
+				
+				if (gbl_tdsBINPending) {
+				  	hpci3DSBINProcess(fullPrelimResponse);
+				}
+			    
+			    hpciConsoleLogDebug("======End payments.setupComplete callback=========");
+			});
+			
+			hpciConsoleLogDebug("initialization complete for cruise1");
+			
+		}
+
+		hpciWPFlex1SetupIFrm = function() {
+		
+			hpciConsoleLogDebug("In hpciWPFlex1SetupIFrm");
+																																							
+		}
+
+		hpciWPFlex1Init = function(inDDCFormAction, inFullPrelimResponse) {
+		
+			hpciConsoleLogDebug("In hpciWPFlex1Init");
+						hpciWPFlex1SetupIFrm();
+			gbl_ddcFormAction = inDDCFormAction;
+			gbl_tdsSetupComplete = true;
+			hpciConsoleLogDebug("initialization complete for wpflex1");
+			
+			// setup a message listner for WPFlex			
+			jQuery(window).on("message", function(e) {
+				if (gbl_tfuGlobalWPFlex1Msg == "Y") {
+				    var data = e.originalEvent.data;
+				    hpciConsoleLogDebug("on message data:" + data);
+				    var dataMap = JSON.parse(data);
+	       			
+	       			var messageType = dataMap.MessageType;
+	       			if(messageType === "profile.completed") {
+					    gbl_tfuGlobalWPFlex1Msg = "N";
+	       				hpciConsoleLogDebug("Message: " + messageType);
+	       				
+				    	//Set a global flag for Bin.Process
+	       				gbl_cruiseSessionId = dataMap.SessionId;
+				    	gbl_cruiseBinPocessStatus = dataMap.Status;
+				    					    							    	
+				    	cruiseData = "&cruiseSessionId=" + encodeURIComponent(gbl_cruiseSessionId) + "&cruiseBinStatus=" + encodeURIComponent(gbl_cruiseBinPocessStatus) + "&threeDSOrderId=" + encodeURIComponent(gbl_threeDSOrderId);
+				    	
+					  	if (gbl_tokenFullMsg != "") {
+					  	    					    	gbl_tokenFullMsg = gbl_tokenFullMsg + cruiseData;
+					    }
+					    
+				    	var fullPrelimResponse = gbl_tfuGlobalPrelimResponse + cruiseData;
+				    	var gbl_postMsgUrl = gbl_tfuGlobalPostMsgUrl;
+				    	gbl_tfuGlobalPrelimResponse = "";
+				    	gbl_tfuGlobalPostMsgUrl = "";
+				    	
+				    	// reset the global pending message by returning a blank value
+				    	hpciConsoleLogDebug("sending fresh message 1.3:" + fullPrelimResponse);
+						jQuery.postMessage(
+						  fullPrelimResponse,
+						  gbl_postMsgUrl,
+						  parent
+						);	  
+	       				
+	       			}
+				    
+				}
+				else {
+				    hpciConsoleLogDebug(" gbl_tfuGlobalWPFlex1Msg:" + gbl_tfuGlobalWPFlex1Msg);
+				}
+			});
+			
+			if (gbl_tdsBINPending) {
+				hpci3DSBINProcess(inFullPrelimResponse);
+			}
+			
+		}
+
+		hpciInit3DSProvider = function(in3DSProvider, in3DSJwtToken, in3DSOrderId, inDDCFormAction, fullPrelimResponse) {
+			hpciConsoleLogDebug("In hpciInit3DSProvider");
+			
+						gbl_threeDSOrderId = in3DSOrderId;
+			gbl_threeDSJwtToken = in3DSJwtToken;
+			
+			if (in3DSProvider) {
+			
+								if (in3DSProvider == "cruise1") {
+				
+																jQuery.getScript('https://songbird.cardinalcommerce.com/edge/v1/songbird.js', function() {
+							hpciConsoleLogDebug("Loaded live cruise1");
+							hpciCruise1Init(fullPrelimResponse);
+						});
+						        				
+				}
+				else if (in3DSProvider == "wpflex1") {
+					hpciWPFlex1Init(inDDCFormAction, fullPrelimResponse);
+				}
+				
+			}
+		}
+
+		hpciStart3DSWiring = function(fullPrelimResponse) {
+			hpciConsoleLogDebug("In hpciStart3DSWiring");
+			if (gbl_tdsSetupStarted) {
+				hpciConsoleLogDebug("Already in progress hpciStart3DSWiring");
+				return;
+			}
+			gbl_tdsSetupStarted = true;
+			
+							// hpciWPFlex1SetupIFrm();
+						
+			hpciConsoleLogDebug("creating jwt token using client session ID :" + gbl_selected3DSecSessionId + "; selected3DSecPayName:" + gbl_selected3DSecPayName + "; selected3DSecPayCCType:" + gbl_selected3DSecPayCCType + "; selected3DSecPayCurISO:" + gbl_selected3DSecPayCurISO);
+			jQuery.post("https://cci.framehpci.com/iSynSApp/appUserMapCC!createThreeDSJwtToken.action", { selected3DSecName: gbl_selected3DSecName, selected3DSecSessionId: gbl_selected3DSecSessionId, selected3DSecPayName: gbl_selected3DSecPayName, selected3DSecPayCCType: gbl_selected3DSecPayCCType, selected3DSecPayCurISO: gbl_selected3DSecPayCurISO, sid: "528063" },
+			  function(data){
+			  
+				hpciStatus = hpciUrlParam('hpciStatus', "?" + data);
+				hpci3DSJwtToken = hpciUrlParam('hpci3DSJwtToken', "?" + data);
+				hpci3DSProvider = hpciUrlParam('hpci3DSProvider', "?" + data);
+				hpci3DSOrderId = hpciUrlParam('hpci3DSOrderId', "?" + data);
+			  	hpciDDCFormAction = hpciUrlParam('hpciDDCFormAction', "?" + data);
+			  	
+			  	hpciConsoleLogDebug("received jwt token :" + hpci3DSJwtToken);
+			  	hpciConsoleLogDebug("received threeds provider :" + hpci3DSProvider);
+			  	hpciConsoleLogDebug("received threeds order id :" + hpci3DSOrderId);
+			  	hpciConsoleLogDebug("received threeds jwt token :" + hpci3DSJwtToken);
+			  	hpciConsoleLogDebug("received device data action :" + hpciDDCFormAction);
+			  	
+			  	if (hpciStatus == "success") {
+				  	hpciConsoleLogDebug("received jwt token status :" + hpciStatus);
+					
+					hpciInit3DSProvider(gbl_selected3DSecName, hpci3DSJwtToken, hpci3DSOrderId, hpciDDCFormAction, fullPrelimResponse);
+									  	
+				  				        var setup3DSResponse = "hpciStatus=success&hpciRespMode=setup3ds";
+			        
+			        hpciConsoleLogDebug("sending fresh message setup3DSResponse:" + setup3DSResponse);
+			        
+					jQuery.postMessage(
+					  setup3DSResponse,
+					  gbl_postMsgUrl,
+					  parent
+					);
+				  					  	
+			  	}
+			  	else {
+			  	
+			  		hpciErrCode = hpciUrlParam('hpciErrCode', "?" + data);
+			  		hpciErrMsg = hpciUrlParam('hpciErrMsg', "?" + data);
+			  		
+					var setup3DSResponse = "hpciStatus=error&hpciRespMode=setup3ds&hpciErrCode=" + encodeURIComponent(hpciErrCode) + "&hpciErrMsg=" + encodeURIComponent(hpciErrMsg);
+					
+			        hpciConsoleLogDebug("sending fresh error message setup3DSResponse:" + setup3DSResponse);
+			        
+					jQuery.postMessage(
+					  setup3DSResponse,
+					  gbl_postMsgUrl,
+					  parent
+					);
+			  	}
+			  		
+			  }
+			);
+			
+		}
+		    
+	  </script>
+  
+    
+<!-- **srvcomm end -->
+      
+ <!-- **browserevt begin -->
+
+    <script>
+
+	hpciSendFormFieldMsg = function (srcFrameName, selFieldId, selFieldObjValue) {
+		    	
+    			
+	}
+
+	hpciReportFormFields = function() {
+	
+		if (gbl_reportFormFields == "") return "";
+		
+		var formFieldName = "reportedFormFields";
+		var formFieldValues = "";
+		
+		// find the field names
+		var fieldConcat = "";
+		hpciConsoleLogDebug("gbl_reportFormFieldArray:" + gbl_reportFormFieldArray);
+		for (var nextFormNameIdx in gbl_reportFormFieldArray) {
+			var nextFormName = gbl_reportFormFieldArray[nextFormNameIdx];
+			var nextFormValue = "";
+			hpciConsoleLogDebug("nextFormName:" + nextFormName);
+			
+			if (nextFormName != gbl_ccFieldNameInit && nextFormName != gbl_ccFieldNameAlt1 && nextFormName != gbl_cvvFieldNameInit && nextFormName != gbl_cvvFieldNameAlt1) {
+				var nextFormInput = jQuery("#" + nextFormName);
+				var nextFormInputValue = nextFormInput.val();
+		    	var nextFormValueValidCC = hpciIsCCValue(nextFormInputValue);
+		    	if (nextFormValueValidCC == "N") {
+		    	   nextFormValue = nextFormInputValue;
+		    	}
+		    	else {
+					hpciConsoleLogDebug("found cc value in field name:" + nextFormName);
+		    	}
+			}
+						
+			formFieldValues = formFieldValues + fieldConcat + encodeURIComponent(nextFormName) + "=" + encodeURIComponent(nextFormValue);
+			fieldConcat = "&";
+		}
+		
+		var formFieldValuesEncoded = encodeURIComponent(formFieldValues);
+		var fullFormFieldNameValues = "&" + encodeURIComponent(formFieldName) + "=" + formFieldValuesEncoded;
+		hpciConsoleLogDebug("fullFormFieldNameValues:" + fullFormFieldNameValues);
+		return fullFormFieldNameValues;
+	}
+
+	hpciHookUpReportFormFields = function() {
+	
+		if (gbl_reportFormFields == "") return "";
+	
+		hpciConsoleLogDebug("gbl_reportFormFields:" + gbl_reportFormFields);
+		hpciConsoleLogDebug("gbl_reportFormValues:" + gbl_reportFormValues);
+		hpciConsoleLogDebug("gbl_reportFormFormats:" + gbl_reportFormFormats);
+			
+		// find the field names
+		gbl_reportFormFieldArray = gbl_reportFormFields.split(";");
+		var reportFormValueArray = gbl_reportFormValues.split(";");
+		var reportFormFormatArray = gbl_reportFormFormats.split(";");
+		
+		for (var nextFormNameIdx in gbl_reportFormFieldArray) {
+			var nextFormName = gbl_reportFormFieldArray[nextFormNameIdx];
+			var nextFormValue = "";
+			if (reportFormValueArray.length > nextFormNameIdx) {
+				nextFormValue = reportFormValueArray[nextFormNameIdx];
+			}
+			
+			var nextFormFormat = "";
+			if (reportFormFormatArray.length > nextFormNameIdx) {
+				nextFormFormat = reportFormFormatArray[nextFormNameIdx];
+			}
+			
+			if (nextFormName != gbl_ccFieldNameInit && nextFormName != gbl_ccFieldNameAlt1 && nextFormName != gbl_cvvFieldNameInit && nextFormName != gbl_cvvFieldNameAlt1) {
+			
+				var nextFormInput = jQuery("#" + nextFormName);
+				var nextFormInputValue = nextFormInput.val();
+				
+				hpciConsoleLogDebug("in hpciHookUpReportFormFields nextFormName 3:" + nextFormName);
+			
+		    	// setup focus handlers
+		    	jQuery("#" + nextFormName).focusin(function (e) {
+					hpciConsoleLogDebug("focus field id:" + this.id);
+	   				gbl_frameFocus = this.id;
+	   				gbl_reportFormFieldClearedMap[gbl_frameFocus] = "Y";
+				});
+
+		    	// setup focusout / blur handlers
+		    	jQuery("#" + nextFormName).blur(function () {
+		    		if (gbl_frameFocus != "") {
+		    		
+	    				var formValue = gbl_reportFormFieldValueMap[gbl_frameFocus];
+	    				hpciConsoleLogDebug("field value map name:" + gbl_frameFocus + "; value:" + formValue);
+	    				if(formValue != null) {
+	    					hpciConsoleLogDebug("handle lost focus for:" + gbl_frameFocus);
+	    					var formFieldCleared = gbl_reportFormFieldClearedMap[gbl_frameFocus];
+	    					if(formFieldCleared == null) {
+	    						formFieldCleared = "N";
+	    					}
+	    					
+							var formFieldObj = jQuery("#" + gbl_frameFocus);
+							var formFieldObjValue = formFieldObj.val();
+							
+								    					
+	    					hpciSendFormFieldMsg(gbl_frameName, gbl_frameFocus, formFieldObjValue);
+	    				}
+	    				
+		    		}
+	    			gbl_frameFocus = "";
+				});
+		    	
+		    			    	
+		    	// store values in map
+		    	gbl_reportFormFieldValueMap[nextFormName] = nextFormValue;
+		    	gbl_reportFormFieldFormatMap[nextFormName] = nextFormFormat;
+				var formFieldObj = jQuery("#" + nextFormName);
+		    	formFieldObj.val(nextFormValue);
+
+			}
+						
+		}
+	}
+
+	jQuery.receiveMessage(
+	  function(e){
+	  
+  	 	 hpciConsoleLogDebug("Received Message :" + e.data);
+	  	 
+	  	 // get the return prepared parent url
+	  	 var fullData = "" + e.data;
+	  	 var receivedParamData = "";
+	  	 var preparedPostMsgUrl = gbl_postMsgUrl;
+	  	 
+		 // anchors to locate
+	 	 var tokenSplit = "mapcc-url=";
+		
+		 // find the anchors
+		 var tokenIdx = fullData.indexOf(tokenSplit);
+
+		 		 
+		 if (tokenIdx >= 0 && tokenIdx + tokenSplit.length < fullData.length) {
+			encPreparedPostMsgUrl = fullData.substr(tokenIdx + tokenSplit.length);
+			preparedPostMsgUrl = decodeURIComponent(encPreparedPostMsgUrl);
+		  	hpciConsoleLogDebug("passed parent url :" + preparedPostMsgUrl);
+		  	 
+	  	 	receivedParamData = fullData.substr(0, tokenIdx);
+		 }
+		 else {
+		 	preparedPostMsgUrl = gbl_postMsgUrl;
+			hpciConsoleLogDebug("prepared parent url :" + preparedPostMsgUrl);
+		  	 
+	  	 	receivedParamData = fullData;
+		 }
+		 
+	     // find command
+	     var msgCmd = hpciUrlParam('msgCmd', "?" + receivedParamData);
+	  	 if (msgCmd == "changestyle") {
+	  	 	var elementId = hpciUrlParamStr('elementId', "?" + receivedParamData);
+	  	 	var propName = hpciUrlParamStr('propName', "?" + receivedParamData);
+	  	 	var propValue = hpciUrlParamStr('propValue', "?" + receivedParamData);
+	  	 			  	
+	  	 	if (elementId == gbl_ccFieldNameInit) { elementId = gbl_ccFieldName }
+	  	 	if (elementId == gbl_cvvFieldNameInit) { elementId = gbl_cvvFieldName }
+	  	 	
+	  	 	hpciConsoleLogDebug("msgCmd is changestyle: elementId:" + elementId + "; propName:" + propName + "; propValue:" + propValue);
+	  	 		  	 	
+	  	 	jQuery("#" + elementId).css(propName, propValue);
+	  	 }
+	  	 else if (msgCmd == "changeclass") {
+	  	 	var elementId = hpciUrlParamStr('elementId', "?" + receivedParamData);
+	  	 	var classValue = hpciUrlParamStr('classValue', "?" + receivedParamData);
+	  	 	
+	  	 	if (elementId == gbl_ccFieldNameInit) { elementId = gbl_ccFieldName }
+	  	 	if (elementId == gbl_cvvFieldNameInit) { elementId = gbl_cvvFieldName }
+	  	 	
+	  	 	hpciConsoleLogDebug("msgCmd is changeclass: elementId:" + elementId + "; classValue:" + classValue);
+	  	 		  	 	
+	  	 	jQuery("#" + elementId).attr( "class", classValue );
+	  	 }
+	  	 else if (msgCmd == "changetext") {
+	  	 	var elementId = hpciUrlParamStr('elementId', "?" + receivedParamData);
+	  	 	var textValue = hpciUrlParamStr('textValue', "?" + receivedParamData);
+	  	 	
+		  	var cleanTextValue = hpciCleanText(textValue);
+	  	 	
+	  	 	if (elementId == gbl_ccFieldNameInit) { elementId = gbl_ccFieldName }
+	  	 	if (elementId == gbl_cvvFieldNameInit) { elementId = gbl_cvvFieldName }
+	  	 	
+	  	 	hpciConsoleLogDebug("msgCmd is changetext: elementId:" + elementId + "; textValue:" + cleanTextValue);
+	  	 		  	 	
+	  	 	jQuery("#" + elementId).text( cleanTextValue );
+	  	 }
+	  	 else if (msgCmd == "set3dsec") {
+	  	 
+	  	 	var set3DSecName = hpciUrlParamStr('set3DSecName', "?" + receivedParamData);
+	  	 	var set3DSecPayName = hpciUrlParamStr('set3DSecPayName', "?" + receivedParamData);
+	  	 	var set3DSecPayCCType = hpciUrlParamStr('set3DSecPayCCType', "?" + receivedParamData);
+	  	 	var set3DSecPayCurISO = hpciUrlParamStr('set3DSecPayCurISO', "?" + receivedParamData);
+	  	 	
+		  	set3DSecName = hpciCleanText(set3DSecName);
+		  	set3DSecPayName = hpciCleanText(set3DSecPayName);
+		  	set3DSecPayCCType = hpciCleanText(set3DSecPayCCType);
+		  	set3DSecPayCurISO = hpciCleanText(set3DSecPayCurISO);
+
+			if (set3DSecName != "") {
+				gbl_selected3DSecName = set3DSecName;
+			}
+			if (set3DSecPayName != "") {
+				gbl_selected3DSecPayName = set3DSecPayName;
+			}
+			if (set3DSecPayCCType != "") {
+				gbl_selected3DSecPayCCType = set3DSecPayCCType;
+			}
+			if (set3DSecPayCurISO != "") {
+				gbl_selected3DSecPayCurISO = set3DSecPayCurISO;
+			}
+	  	 	
+	  	 	if (hpci3DSSelectReady()) {
+		  	 			  	 	var emptyTokenMsg = "";
+		  	 	hpci3DSTokenizationFollowUp(emptyTokenMsg);
+			}
+	  	 	
+	  	 	hpciConsoleLogDebug("msgCmd is set3dsec: set3DSecName:" + set3DSecName + "; set3DSecPayName:" + set3DSecPayName);
+	  	 }
+	  	 else if (msgCmd != "") {
+	  	 	hpciConsoleLogDebug("ignore msgCmd:" + msgCmd);
+	  	 }
+	  	 else {
+
+			var ccNumObj = jQuery("#" + gbl_ccFieldName);
+			var ccNumObjValue = hpciGetCCDigits(ccNumObj);
+			var ccCVVObj = jQuery("#" + gbl_cvvFieldName);
+			var ccCVVObjValue = hpciGetCVVDigits(ccCVVObj);
+	  	 				window.hpciTokenizePANAndSendFullMsg(gbl_frameName, ccNumObjValue, ccCVVObjValue, receivedParamData);
+		 }
+	     
+	  	 hpciConsoleLogDebug("processed Received Message");
+	     
+	  },
+	  ''
+	);
+
+        
+    
+  </script>
+  
+<!-- **browserevt end -->
+ 
+  <style type="text/css">body {
+  font-family: Arial;
+  margin: 0;
+  overflow: hidden;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+input {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  cursor: text;
+  outline: none;
+}
+input:hover {
+  cursor: text;
+}
+input::placeholder {
+  color: #9B9B9B;
+  opacity: 1;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #9B9B9B;
+}
+input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #9B9B9B;
+}
+input:focus::placeholder {
+  color: transparent;
+  opacity: 1;
+}
+input:focus:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: transparent;
+}
+input:focus::-ms-input-placeholder { /* Microsoft Edge */
+  color: transparent;
+}
+.hpci-fields-wrapper {
+  width: 100.0%;
+  font-family: Arial, sans-serif;
+}
+.card-number-field {
+  display: inline-block;
+  margin-right: 3%;
+  vertical-align: top;
+  width: 65%;
+  margin-bottom: 25px;
+  position: relative;
+}
+.hpci-field label {
+  color: #2e2e2e;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+.hpci-field input {
+  color: #2e2e2e;
+  font-size: 16px;
+  line-height: 18px;
+  display: block;
+  line-height: 30.0px;
+  padding: 5.0px 7.0% 5.0px 3.0%;
+  border: 1px solid #CDCDCD;
+  background-color: #F9FAFB;
+  outline-width: 0;
+  width: 100.0%;
+  height: 40px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAPCAMAAAAI/bVFAAAAAXNSR0IB2cksfwAAAKtQTFRFAAAAYmJicHBwdXV1c3Nzbm5uWlpaX19fdXV1c3NzaGhobW1tdXV1cnJySUlJcXFxcnJyRkZGYGBgdXV1ampqAAAAdnZ2aGhob29vc3NzICAgeHh4eHh4eHh4cXFxX19fb29veXl5eHh4d3d3dHR0dnZ2VVVVWFhYdnZ2d3d3eHh4cnJyIyMjJCQkYGBgZmZmc3NzZWVlaWlpbGxsdnZ2QEBAcHBwd3d3bGxsY+zLsAAAADl0Uk5TACey9eyVESvsznaD6MUHtcoLJfFsBPlbnLsQ/0CAzzNqh2Cv4V0eIPj3+dcdDlpQPHJol/sMzP2aWXPKrQAAAGpJREFUeJxjYAACRiZmFlY2Bghg5+Dk4ubh5YPw+AUEGRiEhEXAHFExcRAlIQnmSUnLgChZORApryCtqAQEyiqqagzqGpowoKXNICOtowsFetJAnhTUIgZ98nkG0oZGUGBswmBqJg0D5hYA0LEO11b8R/0AAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+.erCCNum {
+  bottom: -20px;
+  color: #cf4343;
+  font-size: 12px;
+  position: absolute;
+  display: none;
+}
+.security-field {
+  display: inline-block;
+  vertical-align: top;
+  width: 31.0%;
+  position: relative;
+}
+.hpci-field.security-field input {
+  padding: 5.0px 14.0% 5.0px 5.0%;
+}
+.erCCVV {
+  bottom: -20px;
+  right: auto;
+  left: 0;
+  color: #cf4343;
+  font-size: 12px;
+  position: absolute;
+  display: none;
+}
+.hpci-field {
+  position: relative;
+}
+.border {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  top: 59px;
+  background: #fced5b;
+  transform: scaleX(0);
+  -webkit-transform: scaleX(0);
+  -moz-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  -o-transform: scaleX(0);
+  transition: transform 0.5s;
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transform-origin: 0% 50%;
+  -webkit-transform-origin: 0% 50%;
+  -moz-transform-origin: 0% 50%;
+  -o-transform-origin: 0% 50%;
+}
+.form-control.is-invalid {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAMAAADjyg5GAAAAAXNSR0IB2cksfwAAALRQTFRFAAAAAAAApDQ0uz09ykFBvT09kjExwT8/zUNDz0NDli0txj8/xUBAjzAwvj4+zEJCzkJCzENDvj4+nDQ0z0NDwj8/zkNDmTMzvD09wT4+wD4+vD09xkBAxEBAxD8/xj8/y0FBzEJCy0JCzEFBrzk5sDg4xUBAuzw8ykJCoDU1ozExykJCuzw8zkJCxkFBx0BAnTQ0uTw8uTw8z0NDjioqxUBAkCwswz8/qjU1vT09y0FBvD4+NSa7uwAAADx0Uk5TAAE7j7iOFa78/xHR0BCl+MD5oCz90v0ogt7ffrTs7bLE+vvDkJGzg/ArL/F//s3MJ4CE/hLTF7I/krmRuxMQ1wAAAJFJREFUeJw1z9cWgjAQBNABkSIWFIld7B27gPj//+UO0X25mZOc7C4AGGbFsqqmgbJsx/WkXMdmqvner+oNiU05tIKgLXSAsCtGQCSoHvp8NgCGdIQxmQBTGmNG5sCCLvWtt1qXbLAlu/3hSE8IE+EMXPjzVfdNbveH7ovn6z+Vz6mQZopBZanewcjfRfHJudEXGh8MBKBj9ZgAAAAASUVORK5CYII=);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+.form-control.is-valid {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPCAMAAADjyg5GAAAAAXNSR0IB2cksfwAAAOpQTFRFAAAAAAAAUo9bYKRnaLBvYaNoSXlJZKlrabNxarRyS4dLZaxtZaxsQIBQYaVpYaZpUYtXarNyaLBvY6lrabJxU4ZZYKVoaLBwWphfAAAAY6dqYaRnZattZ65uabRxaLFwWptgWZZgaLJxZKxtaLBwZq1uS3hLXZ5labJwW5tkVpVeabFxabFwZq1tZq5uTIRVAIAAX6JmXp5jVZJeaLBwZatsX6RnZattTYBNVVVVaLBwYKNmabNxZKpsTnZOUodSZq5uVYlcZKpsZq1uR4BVZqxtUIBQTnpOZKlrY6lrVZJdYKRnZ7BwYaRoZ/o+HAAAAE50Uk5TAAE7j7iOFa78/xHR0BCloCz97qf9KILzPgLCfrTs/vhKUPmyxNoRgfxXQfbDtN8bApFnNvCzg9EUA+l//scNIuMnxNwS0xAXsrI/krmRciT2RQAAAJ5JREFUeJw9j9cWwWAQhCeEGDWI3nvvvXcheP/XkZ/wXe2cs7szAwCSzS7LDpuED07FRROX4hTK7aGF12dKP/8EADVozaEwtQiilorFE0mmkCYzWTKXR6HIEsqsVGusN9BskW102O31B0OMxubFBFNyNl9AXYoHK6hrcrPd7YXSDl/f4+nni/Pll8JzFSn1m/bZvOvfDpLxeD5fhmj0BmJlEB1VFBXHAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+.form-control.is-invalid + .border {
+  background-color: #cf4343;
+  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+}
+.form-control:focus + .border {
+  background-color: #fced5b;
+  transform: scaleX(1);
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  -o-transform: scaleX(1);
+}
+.form-control::-ms-clear {
+  display: none;
+}
+.show-error {
+  display: block;
+}
+@media only screen and (max-width: 500px) {
+  .card-number-field,
+  .security-field {
+    width: 100%;
+    margin-right: 0;
+  }
+  .security-field input {
+    width: 50%;
+  }
+}
+</style>
+  
+ </head>
+ 
+   <body><div class="hpci-fields-wrapper">
+	<div class="hpci-field card-number-field form-group">
+		<label class="form-label" for="ccNum">Card Number</label>
+		<input autocomplete="cc-number" class="form-control" id="ccNum" name="ccNum" type="text" value="">
+		<div class="border"> </div>
+		<span class="erCCNum" id="ccNumValidator">Enter valid Card Number</span>
+	</div>
+	<div class="hpci-field security-field form-group">
+		<label class="form-label" for="ccCVV">Security Code</label>
+		<input autocomplete="cc-csc" class="form-control" id="ccCVV" name="ccCVV" type="text" value="">
+		<div class="border"> </div>
+		<span class="erCCVV" id="ccVVValidator">Enter valid Security Code</span>
+	</div>
+</div>
+
+ <!-- **foot begin -->
+
+
+<!-- **foot end -->
+ 
+
+</body></html>
